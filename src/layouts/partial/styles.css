@@ -1,0 +1,26 @@
+nav>a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav>a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    width: 0px;
+    border-bottom-width: 1px;
+    @apply transition-all duration-300;
+}
+
+nav>a:hover::after,
+nav>.active::after {
+    width: 100%;
+}
+nav>.active::after{
+    border-color: #c0d1ff;
+}
+nav>.active{
+    color: #c0d1ff;
+}
