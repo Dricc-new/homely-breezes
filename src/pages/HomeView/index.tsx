@@ -1,16 +1,16 @@
 import { HomeCarousel } from './home-carousel'
 import { Offers } from './offers'
-import { FeatureRooms } from './feature-rooms'
+import { FeatureRooms } from './featured-rooms'
 
 import SectionPreview from '../../components/section-preview'
 import { AppLayout } from '../../layouts/AppLayout'
 import { useEffect, useState } from 'react'
-import { SecctionHeadrerType, getAboutUs, getGastronomy } from '../../services/services'
+import { SecctionHeaderType, getAboutUs, getGastronomy } from '../../services/services'
 
 
 export function HomeView() {
-    const [aboutUs, setAboutUs] = useState<SecctionHeadrerType>({ title: 'Title', content: 'Content', photos: [] })
-    const [gastronomy, setGastronomy] = useState<SecctionHeadrerType>({ title: 'Title', content: 'Content', photos: [] })
+    const [aboutUs, setAboutUs] = useState<SecctionHeaderType>({ title: 'Title', content: 'Content', photos: [] })
+    const [gastronomy, setGastronomy] = useState<SecctionHeaderType>({ title: 'Title', content: 'Content', photos: [] })
     useEffect(() => {
         getAboutUs().then(data => setAboutUs(data))
         getGastronomy().then(data => setGastronomy(data))

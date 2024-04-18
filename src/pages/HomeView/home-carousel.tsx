@@ -5,12 +5,12 @@ import "@egjs/react-flicking/dist/flicking-inline.css";
 import { Arrow, AutoPlay } from "@egjs/flicking-plugins";
 import "@egjs/flicking-plugins/dist/arrow.css";
 import { useEffect, useState } from "react";
-import { BannerNode, getBanner } from "../../services/services";
+import { Banner, getBanner } from "../../services/services";
 
 const _plugins = [new AutoPlay({ duration: 5000 }), new Arrow()];
 
 export function HomeCarousel() {
-    const [banner, setBanner] = useState<BannerNode[]>([])
+    const [banner, setBanner] = useState<Banner[]>([])
     useEffect(() => {
         getBanner().then(data => setBanner(data))
     }, [])

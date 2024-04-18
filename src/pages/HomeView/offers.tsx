@@ -1,13 +1,19 @@
+import { useEffect, useState } from "react";
 import { SectionTitle } from "../../components/section-preview/secction-title";
 import { SliderButton } from "../../components/slider-button";
+import { getOffers, Offer } from "../../services/services";
 
-const offers = [
-    { img: '/offers/1.jpg', title: 'Private room offer', description: 'Perfect room for newly married couples, with jacuzzi and pool, so you can enjoy your honeymoon.' },
-    { img: '/offers/2.jpg', title: 'Relaxation offer', description: 'Enjoy saunas, massages, acupuncture and spa, release your stress and fatigue.' },
-    { img: '/offers/3.jpg', title: 'Outdoor offer', description: 'Enjoy the variety of gastronomic products at a buffet table with an open bar, in a warm and summery atmosphere.' },
-]
 
 export function Offers() {
+
+    const [offers, setOffers] = useState<Offer[]>([])
+
+    useEffect(() => {
+        getOffers().then(data => {
+            setOffers(data)
+        })
+    }, [])
+
     return <section className='container mx-auto my-32'>
         <SectionTitle className='text-center mb-10' subTitle='Our Offers' >
             Ongoing Offers
