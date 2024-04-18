@@ -5,7 +5,7 @@ Welcome. This project is an example of a website for a hotel, it is just an exam
 The following technologies were mainly used
 1. **[React]():** frontend framework.
 2. **[Tailwind](https://tailwindcss.com/):** css framework. 
-3. **[Vite](https://vitejs.dev/):** frontend tooling
+3. **[Vite](https://vitejs.dev/):** frontend tooling.
 4. **[TypeScript](https://www.typescriptlang.org/):** as a programming language.
 5. **fetch**: do not use Axios because since it is a small project, using it would make the code very complex, and the idea is to make it clear and small.
 

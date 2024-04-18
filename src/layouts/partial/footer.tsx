@@ -11,7 +11,6 @@ export function Footer() {
                     </h3>
                     <a href="#" className='text-blue-400 underline underline-offset-8'>Get Direction</a>
                 </li>
-
                 <li className='w-fit flex flex-col gap-2 mt-8'>
                     <h1 className='mb-2 text-xl font-semibold'>Reservation</h1>
                     <a href="tel:+19 999 999 9999">+19 999 999 9999</a>
@@ -32,7 +31,7 @@ export function Footer() {
                     <h1 className='mb-2 text-xl font-semibold'>Newsletter</h1>
                     <form action="">
                         <div className='flex items-center justify-between w-full overflow-hidden rounded pl-4 bg-white'>
-                            <input placeholder='Enter your email' type="email" />
+                            <input className="outline-none text-black" placeholder='Enter your email' type="email" />
                             <button type="submit" className='p-2 px-4 bg-gradient-to-br from-blue-400 to-violet-700'>SignUp</button>
                         </div>
                     </form>
