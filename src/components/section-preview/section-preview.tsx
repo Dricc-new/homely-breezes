@@ -2,6 +2,7 @@ import React from "react";
 import { PhotosCollage } from "./photos-collage";
 import { SectionTitle } from "./secction-title";
 import { SectionPreviewType } from "./types";
+import { Link } from "react-router-dom";
 
 export class SectionPreview extends React.Component<SectionPreviewType> {
     public constructor(props: SectionPreviewType) { super(props) }
@@ -11,7 +12,7 @@ export class SectionPreview extends React.Component<SectionPreviewType> {
             <article className='lg:w-1/2 flex flex-col flex-grow justify-center'>
                 <SectionTitle subTitle={subTitle}>{title}</SectionTitle>
                 <p className='mb-12 font-light'>{content}</p>
-                {learnMoreUrl && <a href={learnMoreUrl} className='underline underline-offset-8'>Learn More</a>}
+                {learnMoreUrl && <Link to={learnMoreUrl} className='underline underline-offset-8'>Learn More</Link>}
             </article>
             <PhotosCollage images={images} />
         </section>

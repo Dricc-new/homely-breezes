@@ -17,10 +17,9 @@ export function Header() {
                 {showNav && <nav className='flex max-sm:absolute max-sm:top-11 max-sm:p-4 max-sm:items-center max-sm:flex-col max-sm:w-screen max-sm:bg-stone-950 max-sm:-right-4 gap-4'>
                     <NavLink to='/' className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>Home</NavLink>
                     <NavLink to='/rooms' className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>Rooms</NavLink>
-                    <a href="#">About</a>
+                    <NavLink to='/gastronomy' className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>Gastronomy</NavLink>
+                    <NavLink to='/about' className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>About</NavLink>
                     {/* <a href="#">Blog</a> */}
-                    <a href="#">Pages</a>
-                    <a href="#">Contact</a>
                 </nav>}
             </div>
         </div>

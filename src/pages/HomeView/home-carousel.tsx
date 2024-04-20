@@ -4,20 +4,16 @@ import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/react-flicking/dist/flicking-inline.css";
 import { Arrow, AutoPlay } from "@egjs/flicking-plugins";
 import "@egjs/flicking-plugins/dist/arrow.css";
-import { useEffect, useState } from "react";
-import { Banner, getBanner } from "../../services/services";
+import { useLoaderData } from "react-router-dom";
+import { LoaderType } from "./loader";
 
 const _plugins = [new AutoPlay({ duration: 5000 }), new Arrow()];
 
 export function HomeCarousel() {
-    const [banner, setBanner] = useState<Banner[]>([])
-    useEffect(() => {
-        getBanner().then(data => setBanner(data))
-    }, [])
-
+    const { banners } = useLoaderData() as LoaderType
     return <div className='w-full h-screen'>
         <Flicking circular={true} plugins={_plugins}>
-            {banner.map((item, index) => <div key={index} className='w-screen h-screen relative'>
+            {banners.map((item, index) => <div key={index} className='w-screen h-screen relative'>
                 <img src={item.img} className='w-screen h-screen object-cover' alt="" />
                 <div className='absolute bg-stone-950 bg-opacity-40 text-white left-0 top-0 sm:gap-4 right-0 bottom-0 flex flex-col justify-center items-center'>
                     <h1 className='text-4xl sm:text-6xl lg:text-8xl'>{item.title}</h1>

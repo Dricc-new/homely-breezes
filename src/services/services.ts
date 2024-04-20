@@ -8,7 +8,7 @@ export interface Banner {
     img: string
 }
 
-export async function getBanner(): Promise<Banner[]> {
+export async function getBanners(): Promise<Banner[]> {
     try {
         const response = await fetch(`${ApiUrl}/home?populate[0]=Banner.img`)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -66,6 +66,7 @@ export interface Room {
     img: string
     title: string
     price: string
+    description?: string
 }
 
 export async function getFeaturedRooms(): Promise<Room[]> {
