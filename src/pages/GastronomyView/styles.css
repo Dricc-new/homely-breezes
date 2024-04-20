@@ -1,0 +1,5 @@
+@media (min-width: 1024px) {
+    .food-container:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+}

@@ -61,6 +61,29 @@ export async function getGastronomy(): Promise<SecctionHeaderType> {
     }
 }
 
+export interface Food {
+    title: string
+    description: string
+    img: string
+}
+
+export async function getFoods(): Promise<Food[]> {
+    try {
+        const response = await fetch(`${ApiUrl}/foods?populate=*`)
+        const foods = (await response.json()).data
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return foods.map((item: any) => {
+            const { title, description } = item.attributes
+            const img = ApiUrl.replace('/api', '') + item.attributes.img.data.attributes.url
+            return { title, description, img }
+        })
+    } catch (error) {
+
+        console.log(error)
+        return []
+    }
+}
 
 export interface Room {
     img: string

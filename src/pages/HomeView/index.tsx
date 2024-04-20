@@ -7,7 +7,6 @@ import { AppLayout } from '../../layouts/AppLayout'
 import { useLoaderData } from 'react-router-dom'
 import { LoaderType } from './loader'
 
-
 export function HomeView() {
     const { aboutUs, gastronomy, rooms, offers } = useLoaderData() as LoaderType
 
@@ -35,7 +34,7 @@ export function HomeView() {
             images={gastronomy.photos}
             subTitle="Delicious Food"
             title={<span dangerouslySetInnerHTML={{ __html: gastronomy.title }}></span>}
-            learnMoreUrl="#"
+            learnMoreUrl="/gastronomy"
             content={gastronomy.content}
             reverse={true}
         />

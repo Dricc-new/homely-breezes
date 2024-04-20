@@ -8,6 +8,7 @@ import { GastronomyView } from "./pages/GastronomyView";
 import { getAboutUs } from "./services/services";
 import { loaderHome } from "./pages/HomeView/loader";
 import { loaderRooms } from "./pages/RoomsView/loader";
+import { loaderGastronomy } from "./pages/GastronomyView/loader";
 
 export const router = createBrowserRouter([
     {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
             { path: "/rooms", element: <RoomsView />, loader: loaderRooms },
             { path: "/rooms/:id", element: <RoomView /> },
             { path: "/offer/:id", element: <OfferView /> },
-            { path: "/gastronomy", element: <GastronomyView /> },
+            { path: "/gastronomy", element: <GastronomyView />, loader: loaderGastronomy },
             { path: "/about", element: <AboutView />, loader: getAboutUs }
         ]
     },

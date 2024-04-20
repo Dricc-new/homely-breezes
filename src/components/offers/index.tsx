@@ -1,11 +1,11 @@
 import { SectionTitle } from "../section-preview/secction-title";
-import { SliderButton } from "../slider-button";
+// import { SliderButton } from "../slider-button";
 import { Offer } from "../../services/services";
 
 export function Offers(props: { offers: Offer[] }) {
 
-    return <section className='container mx-auto my-32'>
-        <SectionTitle className='text-center mb-10' subTitle='Our Offers' >
+    return <section className='container mx-auto my-28'>
+        <SectionTitle className='text-center my-10' subTitle='Our Offers' >
             Ongoing Offers
         </SectionTitle>
         <ul className='grid md:grid-cols-3 gap-10'>
@@ -15,7 +15,7 @@ export function Offers(props: { offers: Offer[] }) {
                     <h3 className='text-lg font-medium my-2'>{offer.title}</h3>
                     <p className="mb-4">{offer.description}</p>
                     <div className="flex-grow flex justify-end flex-col">
-                        <SliderButton>Book Now</SliderButton>
+                        {/* <SliderButton>Book Now</SliderButton> */}
                     </div>
                 </div>
             </li>)}

@@ -2,7 +2,7 @@ import { SectionTitle } from "../section-preview/secction-title";
 import { Room } from "../../services/services";
 
 export function FeatureRooms(props:{rooms:Room[]}) {
-    return <section className='my-32'>
+    return <section className='my-20'>
         <SectionTitle className='text-center mb-10' subTitle='Featured Rooms' >
             Choose a Better Room
         </SectionTitle>
